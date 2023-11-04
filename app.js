@@ -1,4 +1,4 @@
-import { getCoffeeData } from "./coffeeData";
+import { getCoffeeData } from "./coffeeData.js";
 
 const apiUrls = [
     'https://api.sampleapis.com/coffee/hot',

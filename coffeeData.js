@@ -1,5 +1,5 @@
 import axios, { all } from "axios";
-import { writeFileSync } from "fs/promises";
+import { writeFile } from "fs/promises";
 
 function generateRandomPrice() {
     let num = Math.floor(Math.random() * 890 + 100) // number between 100 - 890
@@ -23,7 +23,7 @@ export async function getCoffeeData(urls, filePath) {
         let customData = allData.map( item => ({...item, price: generateRandomPrice(), count: 1}));
 
         // Write data to JSON file
-        await writeFileSync(filePath, JSON.stringify(customData, null, 2));
+        await writeFile(filePath, JSON.stringify(customData, null, 2));
         console.log('Data written to ', filePath);
         return 'Data written successfully';
     } catch (err) {
